@@ -1,6 +1,6 @@
 // import { Ajax, getValue } from '@syncfusion/ej2-base';
-import { ColumnDirective, ColumnsDirective, DataStateChangeEventArgs, TreeGridComponent } from '@syncfusion/ej2-react-treegrid';
-import { Edit, Inject, Page, PageSettingsModel, Toolbar } from '@syncfusion/ej2-react-treegrid';
+import { ColumnDirective, ColumnsDirective, DataStateChangeEventArgs, GridComponent } from '@syncfusion/ej2-react-grids';
+import { Edit, Inject, Page, PageSettingsModel, Toolbar } from '@syncfusion/ej2-react-grids';
 // import { DataManager, UrlAdaptor, WebApiAdaptor} from '@syncfusion/ej2-data'
 import React, { useEffect, useState } from 'react';
 import { getPosts, addPost, updatePost, deletePost } from "./postsServer"
@@ -50,9 +50,9 @@ const Posts = () => {
   return (
     <div className='control-pane'>
       <div className='control-section'>
-        <TreeGridComponent 
-          idMapping='id' 
-          parentIdMapping='userId'
+        <GridComponent 
+          // idMapping='id' 
+          // parentIdMapping='userId'
           dataSource={data}
           editSettings={editSettings}
           toolbar={toolbarOptions} 
@@ -69,7 +69,7 @@ const Posts = () => {
             <ColumnDirective field='body' headerText='Body' />
           </ColumnsDirective>
           <Inject services={[Page, Edit, Toolbar]} />
-        </TreeGridComponent>
+        </GridComponent>
       </div>
     </div>
   )
